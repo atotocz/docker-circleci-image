@@ -1,8 +1,9 @@
 FROM alpine:3.6
 
 ENV CLOUD_SDK_VERSION 166.0.0
-
+ENV CIRCLE_2_0 true
 ENV PATH /google-cloud-sdk/bin:$PATH
+
 RUN apk --update add \
         curl \
         python \
@@ -12,8 +13,6 @@ RUN apk --update add \
         openssh-client \
         git \
         docker \
-        git \
-        git \
     && curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     rm google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
