@@ -23,3 +23,5 @@ RUN apk --update add \
     gcloud config set metrics/environment github_docker_image && \
     gcloud --quiet components install kubectl && \
     rm -rf /var/cache/apk/*
+
+WORKDIR /root
